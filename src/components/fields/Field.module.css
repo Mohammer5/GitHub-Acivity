@@ -1,0 +1,7 @@
+.field {
+  line-height: 1.625;
+}
+
+.field + .field {
+  margin-top: 20px;
+}

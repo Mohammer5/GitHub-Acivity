@@ -1,0 +1,53 @@
+.container {
+  padding: 16px 10px;
+}
+
+.container:nth-child(2n) {
+  background: #eee;
+}
+
+.container + .container {
+}
+
+.timeTable {
+  text-align: left;
+  border: 1px solid black;
+}
+
+.timeTable th,
+.timeTable td {
+  border: 1px solid black;
+  padding: 4px 10px;
+}
+
+.headline {
+  font-size: 20px;
+  margin: 0 0 16px;
+}
+
+.eventData + .eventData {
+  margin-top: 8px;
+}
+
+.eventHeadline {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: inside;
+}
+
+.listItem + .listItem {
+  margin-top: 4px;
+}
+
+.comment {
+  border: 1px solid #b4b4b4;
+  padding: 16px;
+  overflow: auto;
+  max-height: 200px;
+}

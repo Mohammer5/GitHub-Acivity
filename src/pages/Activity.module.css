@@ -1,0 +1,12 @@
+.page {
+  background: #fafafa;
+  padding: 76px 16px 16px;
+  min-height: 100vh;
+}
+
+.pageContent {
+  padding: 16px;
+  background: white;
+  box-shadow: 2px 2px 4px -2px rgba(0,0,0,0.3);
+  border-radius: 4px;
+}

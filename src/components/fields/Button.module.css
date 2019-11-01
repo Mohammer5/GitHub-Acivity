@@ -1,0 +1,19 @@
+.button {
+  padding: 11px 10px 9px;
+  line-height: 26px;
+  font-size: 16px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+.secondary {
+  border-color: grey;
+  background: none;
+  color: black;
+}
+
+.primary {
+  border-color: gold;
+  background: gold;
+  color: black;
+}

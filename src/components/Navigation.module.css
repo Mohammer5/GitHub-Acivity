@@ -1,0 +1,49 @@
+.navigation {
+  height: 60px;
+  width: 100%;
+  padding: 0 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  font-size: 18px;
+}
+
+.linkList {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+.linkItem {
+  display: block;
+  height: 100%;
+  display: flex;
+}
+
+.link {
+  text-decoration: none;
+  padding: 0 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link:hover {
+  background: #4877f4;
+}
+
+.linkText {
+  display: block;
+  padding: 4px 0 4px 4px;
+  border-left: 4px solid #b4b4b4;
+}
+
+.link:hover .linkText {
+  border-left: 4px solid white;
+  color: white;
+}

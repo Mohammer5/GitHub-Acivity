@@ -1,0 +1,22 @@
+.toggle {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.toggle + .toggle {
+  border-top: 0;
+}
+
+.headline {
+  line-height: 32px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.content {
+  display: none;
+}
+
+.toggle.open .content {
+  display: block;
+}

@@ -1,0 +1,15 @@
+.help {
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  color: grey;
+  margin-top: 4px;
+}
+
+.help + .help {
+  margin-top: 0;
+}
+
+.error {
+  color: red;
+}
