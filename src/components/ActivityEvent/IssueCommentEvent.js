@@ -1,6 +1,8 @@
 import React from 'react';
-import activityStyles from './activityStyles.module.css'
+
 import { EventWrapper } from './EventWrapper';
+import { Link } from '../Link';
+import activityStyles from './activityStyles.module.css'
 
 export const IssueCommentEvent = ({ activity }) => {
   const { payload } = activity
@@ -14,20 +16,18 @@ export const IssueCommentEvent = ({ activity }) => {
       </div>
 
       <div className={activityStyles.eventData}>
+        <span className={activityStyles.eventHeadline}>Author</span>
+        {issue.user.login}
+      </div>
+
+      <div className={activityStyles.eventData}>
         <span className={activityStyles.eventHeadline}>Title</span>
         {issue.title}
       </div>
 
       <div className={activityStyles.eventData}>
         <span className={activityStyles.eventHeadline}>Url</span>
-
-        <a
-          href={comment.html_url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {comment.html_url}
-        </a>
+        <Link href={comment.html_url} />
       </div>
 
       <div className={activityStyles.eventData}>

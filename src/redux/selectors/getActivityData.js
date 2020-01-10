@@ -13,7 +13,7 @@ export const getActivityDataByDay = createSelector(
     const days = activities.reduce(
       (curDays, activity, index) => {
         const date = new Date(activity.created_at)
-        const day = format(date, 'dd MMMM yy')
+        const day = format(date, 'dd MMMM yyyy')
 
         if (index === 0) {
           return [{ day, activities: [ activity ] }]
