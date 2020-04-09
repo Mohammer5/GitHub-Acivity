@@ -8,14 +8,16 @@ export const Toggle = ({
   open,
   onClick,
   id,
-}) => (
-  <div id={id} className={cx(styles.toggle, { [styles.open]: open })}>
-    <div className={cx(styles.headline)} onClick={onClick}>
-      {headline}
-    </div>
+}) => {
+  return (
+    <div id={id} className={cx(styles.toggle, { [styles.open]: open })}>
+      <div className={cx(styles.headline)} onClick={onClick}>
+        {headline}
+      </div>
 
-    <div className={cx(styles.content)}>
-      {children}
+      <div className={cx(styles.content)}>
+        {children}
+      </div>
     </div>
-  </div>
-)
+  )
+}

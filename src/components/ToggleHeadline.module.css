@@ -1,0 +1,13 @@
+.day {
+  display: block;
+  font-size: 12px;
+  color: grey;
+  line-height: 18px;
+}
+
+.repoName {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  color: black;
+}

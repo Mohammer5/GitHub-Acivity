@@ -1,7 +1,7 @@
 import { flatten } from 'lodash/fp';
 import { from, of } from 'rxjs';
 import { ofType } from 'redux-observable';
-import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { tap, catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
 
 import {
   LOAD_ACTIVITY_DATA,
@@ -41,6 +41,7 @@ export const fetchActivityData = (action$, store$) => action$.pipe(
 
       const request = Promise.all(urls.map(url => fetch(url)))
         .then(responses => Promise.all(responses.map(r => r.json())))
+        .then(response => console.log('wat??', response) || response)
         .then(flatten)
 
       return from(request)

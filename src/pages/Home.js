@@ -1,30 +1,30 @@
 import { Form } from 'react-final-form'
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import React, { useMemo } from 'react'
 import cx from 'classnames'
 
-import { H1 } from '../components/H1';
 import { Button } from '../components/fields/Button';
+import { H1 } from '../components/H1';
 import { InputField } from '../components/fields/InputField';
 import { SelectField } from '../components/fields/SelectField';
-import { getUserName } from '../redux/selectors/getUserName';
 import { getPageCount } from '../redux/selectors/getPageCount';
+import { getUserName } from '../redux/selectors/getUserName';
 import { loadActivityData } from '../redux/namespaces/activity/actions';
 import { numberBetween } from '../utils/validators/numberBetween';
 import { required } from '../utils/validators/required';
 import styles from './Home.module.css'
 
-export const Home = ({
-  userName,
-  pageCount,
-  onSubmit: createOnSubmit,
-}) => {
+export const Home = () => {
   const history = useHistory()
-  const onSubmit = useMemo(
-    () => createOnSubmit(history),
-    [ history, createOnSubmit ],
-  )
+  const dispatch = useDispatch()
+  const userName = useSelector(getUserName)
+  const pageCount = useSelector(getPageCount)
+
+  const onSubmit = values => {
+    dispatch(loadActivityData(values.userName, values.pageCount))
+    history.push('/activity')
+  }
 
   return (
     <div className={cx(styles.page)}>
@@ -71,16 +71,3 @@ export const Home = ({
     </div>
   )
 }
-
-export const ConnectedHome = connect(
-  state => ({
-    userName: getUserName(state),
-    pageCount: getPageCount(state),
-  }),
-  dispatch => ({
-    onSubmit: history => values => {
-      dispatch(loadActivityData(values.userName, values.pageCount))
-      history.push('/activity')
-    }
-  })
-)(Home)
