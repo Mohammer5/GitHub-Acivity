@@ -28,40 +28,37 @@ const Error = ({ message }) => (
 )
 
 const Data = ({ data }) => (
-  <div>
+  <Toggles>
     {data.map(
       weekGroup => {
         const { week, weekStart, weekEnd } = weekGroup[0][0]
 
         return (
-          <div key={week}>
-            <h2>{`${weekStart} - ${weekEnd}`}</h2>
-            <div>
-              <Toggles>
-                {weekGroup.map(activities => {
-                  const { day, repo } = activities[0]
-                  const headline = <ToggleHeadline day={day} repo={repo.name} />
+          <Toggle id={week} key={week} headline={<h2>{`${weekStart} - ${weekEnd}`}</h2>}>
+            <Toggles id={week}>
+              {weekGroup.map(activities => {
+                const { day, repo } = activities[0]
+                const headline = <ToggleHeadline day={day} repo={repo.name} />
 
-                  return (
-                    <Toggle key={`${day}-${repo.name}`} headline={headline}>
-                      {activities.map(
-                        activity => (
-                          <ActivityEvent
-                            key={activity.id + activity.created_at}
-                            activity={activity}
-                          />
-                        )
-                      )}
-                    </Toggle>
-                  )
-                })}
-              </Toggles>
-            </div>
-          </div>
+                return (
+                  <Toggle id={`${day}-${repo.name}`} key={`${day}-${repo.name}`} headline={headline}>
+                    {activities.map(
+                      activity => (
+                        <ActivityEvent
+                          key={activity.id + activity.created_at}
+                          activity={activity}
+                        />
+                      )
+                    )}
+                  </Toggle>
+                )
+              })}
+            </Toggles>
+          </Toggle>
         )
       }
     )}
-  </div>
+  </Toggles>
 )
 
 export const Activity = () => {

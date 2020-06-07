@@ -1,22 +1,30 @@
-.toggle {
+.container {
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
 }
 
-.toggle + .toggle {
+.container + .container {
   border-top: 0;
 }
 
 .headline {
+  display: block;
   line-height: 32px;
   font-size: 20px;
   padding: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.open .headline {
+  border-bottom: 1px solid grey;
+  background: #f2f2f2;
 }
 
 .content {
   display: none;
 }
 
-.toggle.open .content {
+.open .content {
   display: block;
 }
